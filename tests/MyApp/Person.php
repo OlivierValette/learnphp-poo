@@ -1,5 +1,14 @@
 <?php
+
+namespace MyApp;
+
+use DateTime;
+
 class Person {
+
+    const DATE_FR = "d/m/Y";
+    const DATE_US = "m-d-Y";
+
 
     /** @var string $firstname  (permet de type les variables sous PHPStorm) */
     private $firstname;
@@ -8,21 +17,36 @@ class Person {
     /** @var DateTime $birthdate */
     private $birthdate;
 
+    // overrides
+
+    // personalized constructor
+    public function __construct(string $firstname, string $lastname, DateTime $birthdate=null)
+    {
+        $this->setFirstname($firstname);
+        $this->setLastname($lastname);
+        if ($birthdate != null) {
+            $this->setBirthdate($birthdate);
+        }
+    }
+
+
     // getters and setters
     /**
      * @return string
      */
     public function getFirstname(): string
     {
-        return $this->firstname;
+        return trim($this->firstname);
     }
 
     /**
      * @param string $firstname
+     * @return Person
      */
-    public function setFirstname(string $firstname): void
+    public function setFirstname(string $firstname): Person
     {
         $this->firstname = ucfirst($firstname);
+        return $this;
     }
 
     /**
@@ -30,15 +54,17 @@ class Person {
      */
     public function getLastname(): string
     {
-        return $this->lastname;
+        return trim($this->lastname);
     }
 
     /**
      * @param string $lastname
+     * @return Person
      */
-    public function setLastname(string $lastname): void
+    public function setLastname(string $lastname): Person
     {
         $this->lastname = ucfirst($lastname);
+        return $this;
     }
 
     /**
@@ -46,7 +72,7 @@ class Person {
      */
     public function getBirthdate(): DateTime
     {
-        return $this->ucfirst(birthdate);
+        return $this->birthdate;
     }
 
     /**
@@ -55,6 +81,11 @@ class Person {
     public function setBirthdate(DateTime $birthdate): void
     {
         $this->birthdate = $birthdate;
+    }
+
+
+    public function getFormatedBirthdate(string $format = self::DATE_US) : string {
+        return $this->getBirthdate()->format($format);
     }
 
     public function getFullname() : string {
@@ -67,11 +98,9 @@ class Person {
         return $diff->y;
     }
 
+    // Exemple (inutile) de méthode statique
+    public static function say() {
+        return 'Bonjour ' . self::DATE_FR;
+    }
+
 }
-
-$pierre = new Person();
-$pierre->setFirstname('Pierre');
-$pierre->setLastname('Jehan');
-$pierre->setBirthdate(new DateTime('1989-06-29'));
-echo $pierre->getFullname() . ' : ' . $pierre->getAge() . ' ans';
-
