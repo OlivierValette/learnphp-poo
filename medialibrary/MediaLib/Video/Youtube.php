@@ -2,6 +2,8 @@
 
 namespace MediaLib\Video;
 
+use TagGenerator\Tag;
+
 
 class Youtube extends Video
 {
@@ -14,7 +16,12 @@ class Youtube extends Video
 
     public function getHtml(): string
     {
-        return '<iframe src="'; //. $video_url . '" ' . $html_attibutes . '></iframe>';
+        $video_url = 'https://www.youtube.com/embed/' . $this->getCode();
+        $otag = new Tag("iframe");
+        $otag-> addAttribute("src", $video_url);
+        =\"' . $video_url . '\" ' . $html_attibutes . '>
+        $ctag</iframe>';
+        return $tag;
     }
 
 }
