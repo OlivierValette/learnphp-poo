@@ -1,13 +1,14 @@
 <?php
 
 namespace MediaLib\Video;
+use MediaLib\Autoplay;
 use MediaLib\Media;
 
 
 abstract class Video extends Media
 {
-    /** @var bool $autoplay */
-    private $autoplay;
+    use Autoplay;
+    
     /** @var int $frameborder */
     private $frameborder;
     /** @var bool $allowFullScreen */
@@ -16,24 +17,6 @@ abstract class Video extends Media
     public abstract function getCode() : string;
 
     /** getters and setters */
-    /**
-     * @return bool
-     */
-    public function isAutoplay(): bool
-    {
-        return $this->autoplay;
-    }
-
-    /**
-     * @param bool $autoplay
-     * @return Video
-     */
-    public function setAutoplay(bool $autoplay): Video
-    {
-        $this->autoplay = $autoplay;
-        return $this;
-    }
-
     /**
      * @return int
      */

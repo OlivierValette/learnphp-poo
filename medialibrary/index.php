@@ -21,6 +21,11 @@ echo 'Number of attributes: ' . count($input);
 
 
 echo "<hr>";
+$audio = new \MediaLib\Audio("musique.mp3");
+$audio->setAutoplay(true);
+var_dump($audio);
+
+echo "<hr>";
 $media = new Picture("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png");
 $media->render();
 

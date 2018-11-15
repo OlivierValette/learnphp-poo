@@ -5,6 +5,8 @@ namespace MediaLib;
 
 class Audio extends Media
 {
+    use Autoplay;
+    
     /** @var bool $controls */
     private $controls;
 
