@@ -36,7 +36,7 @@ class Utilisateur extends Entity
         return $this->getCivilite()->getLibelle() . ' ' . $this->getPrenom() . ' ' . $this->getNom();
     }
     
-    /** get civilite of current utilisateur
+    /** ASSOCIATION: get civilite of current utilisateur
      * @return Civilite
      */
     public function getCivilite() : Civilite
@@ -46,6 +46,11 @@ class Utilisateur extends Entity
             Civilite::class,
             true
         );
+    }
+    
+    public function __toString()
+    {
+        return $this->getFullname();
     }
     
     /* getters and setters */

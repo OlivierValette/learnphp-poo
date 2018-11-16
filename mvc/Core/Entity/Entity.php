@@ -30,11 +30,10 @@ abstract class Entity
     
     /**
      * @param int $id
-     * @return array
+     * @return Entity
      */
-    public function getOne(int $id): array
+    public function getOne(int $id): Entity
     {
-        // static::class is the child class (as self::class always refers to Entity class)
         return $this->database->query(
             "SELECT * FROM " . $this->table . " WHERE id = " . $id,
             static::class
