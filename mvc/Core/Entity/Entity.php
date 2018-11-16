@@ -14,22 +14,31 @@ abstract class Entity
     public function __construct(Database $database)
     {
         $this->database = $database;
+        $parts = explode("\\", static::class);
+        $classname = array_pop($parts);
+        $this->table = strtolower($classname);
     }
     
     public function getAll(): array
     {
-        // static::class is the child class (as self::class map Entity class)
-        return $this->database->query("SELECT * FROM " . $this->table, static::class);
+        // static::class is the child class (as self::class always refers to Entity class)
+        return $this->database->query(
+            "SELECT * FROM " . $this->table,
+            static::class
+        );
     }
     
+    /**
+     * @param int $id
+     * @return array
+     */
     public function getOne(int $id): array
     {
-        // static::class is the child class (as self::class map Entity class)
-        return $this->database->query("
-            SELECT *
-            FROM " . $this->table . "
-            WHERE id = " . $id,
-            static::class);
+        // static::class is the child class (as self::class always refers to Entity class)
+        return $this->database->query(
+            "SELECT * FROM " . $this->table . " WHERE id = " . $id,
+            static::class
+        );
     }
     
     /** magical method used in case of an attempt to access a private property

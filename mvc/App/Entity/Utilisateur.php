@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Core\Database\Database;
 use Core\Entity\Entity;
 
 class Utilisateur extends Entity
@@ -16,33 +15,37 @@ class Utilisateur extends Entity
     /** @var  string $login*/
     protected $login;
     /** @var string $motDePasse */
-    protected $motDePasse;
+    protected $mot_de_passe;
     /** @var string $email */
     protected $email;
     /** @var \DateTime $dateNaissance */
-    protected $dateNaissance;
+    protected $date_naissance;
     /** @var string $adresse */
     protected $adresse;
     /** @var int $villeId */
-    protected $villeId;
+    protected $ville_id;
     /** @var int $civiliteId */
-    protected $civiliteId;
+    protected $civilite_id;
 
-    /**
-     * utilisateur constructor.
-     */
-    public function __construct(Database $database)
-    {
-        parent::__construct($database);
-        $this->table = "utilisateur";
-    }
     
     /** get full name
      * @return string
      */
     public function getFullname()
     {
-        return $this->getPrenom() . ' ' . $this->getNom();
+        return $this->getCivilite()->getLibelle() . ' ' . $this->getPrenom() . ' ' . $this->getNom();
+    }
+    
+    /** get civilite of current utilisateur
+     * @return Civilite
+     */
+    public function getCivilite() : Civilite
+    {
+        return $this->database->query(
+            "SELECT * FROM civilite WHERE id = " . $this->civilite_id,
+            Civilite::class,
+            true
+        );
     }
     
     /* getters and setters */
