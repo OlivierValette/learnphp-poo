@@ -11,5 +11,4 @@ class File implements Sizable{
     public function getSize(): int {
         return $this->size;
     }
-
 }

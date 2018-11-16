@@ -28,7 +28,8 @@ class Folder implements Sizable {
         /**
          * Ici, on boucle sur le contenu du dossier.
          * Grace à l'interface Sizable, peu importe le type d'objet contenu dans la propriété "content".
-         * Si l'ensemble des éléments de "content" implémentent l'interface Sizable, ils auront tous la méthode getSize().
+         * Si l'ensemble des éléments de "content" implémentent l'interface Sizable, ils auront tous la
+         * méthode getSize().
          */
         foreach($this->content as $fileOrFolder) {
             $size += $fileOrFolder->getSize();

@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Dans cet exemple, le code intéressant ce trouve plus particulièrement dans la méthode getSize() de la classe Folder.
+ * Dans cet exemple, le code intéressant se trouve plus particulièrement
+ * dans la méthode getSize() de la classe Folder.
  */
 
 require_once 'Sizable.php';
