@@ -2,11 +2,16 @@
 
 namespace Core\Controller;
 
+use Core\Database\Database;
+
 
 abstract class Controller
 {
     protected $viewPath; // Views directory path
     protected $template; // default template
+    
+    /** @var Database $database */
+    private $database;
     
     protected function render($view, $variables = [])
     {
@@ -16,4 +21,22 @@ abstract class Controller
         $content = ob_get_clean(); // Store the output in a variable
         require($this->viewPath . $this->template . '.php');
     }
+    
+    /** getters and setters sur $database */
+    /**
+     * @return Database
+     */
+    public function getDatabase(): Database
+    {
+        return $this->database;
+    }
+    
+    /**
+     * @param Database $database
+     */
+    public function setDatabase(Database $database): void
+    {
+        $this->database = $database;
+    }
+    
 }

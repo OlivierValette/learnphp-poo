@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Utilisateur;
+
 class DefaultController extends BaseController
 {
     
     public function indexAction()
     {
-        $user = "pjehan";
-        $this->render("default/index", ["username" => $user]);
+        $users = $this->getDatabase()->getEntity(Utilisateur::class)->getAll();
+        $this->render("default/index", ["users" => $users]);
     }
     
 }
