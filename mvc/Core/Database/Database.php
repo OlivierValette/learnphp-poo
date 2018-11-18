@@ -39,10 +39,14 @@ class Database
     public function getPDO() : PDO
     {
         if ($this->pdo === null) {
-            $this->pdo = new PDO("mysql:dbname=" . $this->db_name . ";host=" . $this->db_host, $this->db_user, $this->db_pass, [
+            $this->pdo = new PDO(
+                "mysql:dbname=" . $this->db_name . ";host=" . $this->db_host,
+                $this->db_user,
+                $this->db_pass,
+                [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8', lc_time_names = 'fr_FR';"
-            ]);
+                ]);
         }
         return $this->pdo;
     }
