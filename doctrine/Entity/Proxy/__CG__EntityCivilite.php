@@ -173,4 +173,52 @@ class Civilite extends \Entity\Civilite implements \Doctrine\ORM\Proxy\Proxy
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+        if ($this->__isInitialized__ === false) {
+            return  parent::getId();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setId(int $id): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLibelle(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLibelle', []);
+
+        return parent::getLibelle();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLibelle(string $libelle): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLibelle', [$libelle]);
+
+        parent::setLibelle($libelle);
+    }
+
 }

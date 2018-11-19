@@ -71,7 +71,7 @@ class Utilisateur
     private $adresse;
 
     /**
-     * @var \Civilite
+     * @var Civilite
      *
      * @ORM\ManyToOne(targetEntity="Civilite")
      * @ORM\JoinColumns({
@@ -81,7 +81,7 @@ class Utilisateur
     private $civilite;
 
     /**
-     * @var \Ville
+     * @var Ville
      *
      * @ORM\ManyToOne(targetEntity="Ville")
      * @ORM\JoinColumns({
@@ -89,6 +89,167 @@ class Utilisateur
      * })
      */
     private $ville;
-
+    
+    
+    /* getters and setters */
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+    
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+    
+    /**
+     * @param string $nom
+     */
+    public function setNom(string $nom): void
+    {
+        $this->nom = $nom;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getPrenom(): string
+    {
+        return $this->prenom;
+    }
+    
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom(string $prenom): void
+    {
+        $this->prenom = $prenom;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+    
+    /**
+     * @param string $login
+     */
+    public function setLogin(string $login): void
+    {
+        $this->login = $login;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getMotDePasse(): string
+    {
+        return $this->motDePasse;
+    }
+    
+    /**
+     * @param string $motDePasse
+     */
+    public function setMotDePasse(string $motDePasse): void
+    {
+        $this->motDePasse = $motDePasse;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+    
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+    
+    /**
+     * @return \DateTime|null
+     */
+    public function getDateNaissance(): ?\DateTime
+    {
+        return $this->dateNaissance;
+    }
+    
+    /**
+     * @param \DateTime|null $dateNaissance
+     */
+    public function setDateNaissance(?\DateTime $dateNaissance): void
+    {
+        $this->dateNaissance = $dateNaissance;
+    }
+    
+    /**
+     * @return null|string
+     */
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+    
+    /**
+     * @param null|string $adresse
+     */
+    public function setAdresse(?string $adresse): void
+    {
+        $this->adresse = $adresse;
+    }
+    
+    /**
+     * @return Civilite
+     */
+    public function getCivilite(): Civilite
+    {
+        return $this->civilite;
+    }
+    
+    /**
+     * @param Civilite $civilite
+     */
+    public function setCivilite(Civilite $civilite): void
+    {
+        $this->civilite = $civilite;
+    }
+    
+    /**
+     * @return Ville
+     */
+    public function getVille(): Ville
+    {
+        return $this->ville;
+    }
+    
+    /**
+     * @param Ville $ville
+     */
+    public function setVille(Ville $ville): void
+    {
+        $this->ville = $ville;
+    }
 
 }

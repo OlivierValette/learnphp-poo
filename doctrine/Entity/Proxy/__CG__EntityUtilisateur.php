@@ -173,4 +173,228 @@ class Utilisateur extends \Entity\Utilisateur implements \Doctrine\ORM\Proxy\Pro
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getId(): int
+    {
+        if ($this->__isInitialized__ === false) {
+            return  parent::getId();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setId(int $id): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNom(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNom', []);
+
+        return parent::getNom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNom(string $nom): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNom', [$nom]);
+
+        parent::setNom($nom);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPrenom(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrenom', []);
+
+        return parent::getPrenom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPrenom(string $prenom): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPrenom', [$prenom]);
+
+        parent::setPrenom($prenom);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLogin(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLogin', []);
+
+        return parent::getLogin();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLogin(string $login): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLogin', [$login]);
+
+        parent::setLogin($login);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMotDePasse(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMotDePasse', []);
+
+        return parent::getMotDePasse();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMotDePasse(string $motDePasse): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMotDePasse', [$motDePasse]);
+
+        parent::setMotDePasse($motDePasse);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEmail(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
+
+        return parent::getEmail();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setEmail(string $email): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
+
+        parent::setEmail($email);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDateNaissance(): ?\DateTime
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateNaissance', []);
+
+        return parent::getDateNaissance();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDateNaissance(?\DateTime $dateNaissance): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateNaissance', [$dateNaissance]);
+
+        parent::setDateNaissance($dateNaissance);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAdresse(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdresse', []);
+
+        return parent::getAdresse();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setAdresse(?string $adresse): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAdresse', [$adresse]);
+
+        parent::setAdresse($adresse);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCivilite(): \Entity\Civilite
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCivilite', []);
+
+        return parent::getCivilite();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCivilite(\Entity\Civilite $civilite): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCivilite', [$civilite]);
+
+        parent::setCivilite($civilite);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVille(): \Entity\Ville
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVille', []);
+
+        return parent::getVille();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVille(\Entity\Ville $ville): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVille', [$ville]);
+
+        parent::setVille($ville);
+    }
+
 }
